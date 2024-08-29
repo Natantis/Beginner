@@ -1,0 +1,18 @@
+var a : longint;
+ 
+function DEC_BIN(x:longint):string;
+const digits:array [0..1] of char = ('0','1');
+var res:string; d:0..1;
+begin
+   res:='';
+   while (x<>0) do begin
+      d:=x mod 2; res:=digits[d]+res;
+      x:=x div 2;
+   end;
+   DEC_BIN:=res;
+end;
+ 
+begin { основная программа }
+  readln( a );
+  writeln( DEC_BIN(a) );
+end.
